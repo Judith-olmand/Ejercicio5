@@ -7,8 +7,8 @@ public class Main {
         try (Connection conn = DriverManager.getConnection(
                 DBConfig.getUrl(),
                 DBConfig.getUser(),
-                DBConfig.getPassword()); Statement statement = conn.createStatement()){
-            System.out.println("Conexión establecida con Oracle.");
+                DBConfig.getPassword())){
+            System.out.println("Conexión establecida con Oracle."); //Mediante Maven
             String sql = "UPDATE empleado SET salario = ? WHERE ID = ? ";
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setDouble(1, 355.15);
